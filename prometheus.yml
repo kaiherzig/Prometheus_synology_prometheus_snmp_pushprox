@@ -1,0 +1,15 @@
+- job_name: 'snmp_synology'
+  proxy_url: <<pushprox>>
+  static_configs:
+    - targets:
+      - <<TARGET>> # Needs to be identical to pushprox-client --fqdn
+  metrics_path: /snmp
+  params:
+    module: [synology]
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: <<TARGET>>:9116  # The SNMP exporter's real hostname:port.
