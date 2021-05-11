@@ -15,3 +15,6 @@ Create 2 sheduled jobs in Synology on Startup
 /path/to/pushprox-client --proxy-url='https://fill.me:8080' --fqdn=1.2.3.4
 
 FQDN has to be identical with Proxy address.
+
+Grafana Dashboard original https://grafana.com/grafana/dashboards/14284/
+Changed temp. to celsius
